@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ABBENDHA'S CAFÉ — Your Cart. Review your order and checkout.">
+  <title>Your Order — ABBENDHA'S CAFÉ | Kamkole</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+
+<body>
+
+  <!-- ====== NOTIFICATION CONTAINER ====== -->
+  <div class="notification-container" id="notificationContainer"></div>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">ABBENDHA'S <span>CAFÉ</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#story">Our Story</a>
+        <a href="index.html#menu">Menu</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="cart.html" class="active nav-cart" aria-label="Shopping Cart">
+          🛒 <span class="cart-count show" id="cartCount">0</span>
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ====== CART PAGE ====== -->
+  <div class="cart-page">
+    <div class="container">
+      <div class="cart-header">
+        <span class="badge-tag">Your Selection</span>
+        <h1>YOUR <span>ORDER</span></h1>
+        <div class="gold-line"></div>
+        <p class="section-subtitle">ABBENDHA'S CAFÉ • Freshly Prepared for You in Kamkole</p>
+      </div>
+
+      <div class="cart-content" id="cartContent">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer" style="margin-top: 60px;">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>ABBENDHA'S CAFÉ</h3>
+          <p>"Where Every Cup Creates a Beautiful Memory."</p>
+          <p>Established 2026. Kamkole, opposite Woxsen Food.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html#home">Home</a>
+          <a href="index.html#menu">Full Menu</a>
+          <a href="index.html#story">Our Story</a>
+          <a href="index.html#contact">Find Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Order Assistance</h4>
+          <p>📞 <a href="tel:7993062038" style="color:var(--clr-champagne); font-weight:600;">7993062038</a></p>
+          <p>🕐 9:00 AM – 11:00 PM</p>
+        </div>
+        <div class="footer-col">
+          <h4>Address</h4>
+          <p>📍 Kamkole, opposite Woxsen Food</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ABBENDHA'S CAFÉ. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== CURRENCY FORMATTER (INR ₹) ==========
+    function formatPrice(price) {
+      return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      }).format(price);
+    }
+
+    function showNotification(message) {
+      const container = document.getElementById('notificationContainer');
+      if (!container) return;
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.innerHTML = message;
+      container.appendChild(notification);
+      setTimeout(() => {
+        notification.classList.add('removing');
+        setTimeout(() => notification.remove(), 300);
+      }, 2800);
+    }
+
+    // ========== NAVIGATION ==========
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const navOverlay = document.getElementById('navOverlay');
+
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+        if (navOverlay) navOverlay.classList.toggle('active');
+      });
+    }
+
+    if (navOverlay) {
+      navOverlay.addEventListener('click', () => {
+        if (hamburger) hamburger.classList.remove('active');
+        if (navLinks) navLinks.classList.remove('open');
+        navOverlay.classList.remove('active');
+      });
+    }
+
+    // ========== CART LOGIC ==========
+    let cart = JSON.parse(localStorage.getItem('abbendha_cart')) || [];
+    const DELIVERY_CHARGE = 40;
+
+    function saveCart() {
+      localStorage.setItem('abbendha_cart', JSON.stringify(cart));
+      updateCartCount();
+      renderCart();
+    }
+
+    function updateCartCount() {
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      const countEl = document.getElementById('cartCount');
+      if (countEl) {
+        countEl.textContent = count;
+        countEl.classList.toggle('show', count > 0);
+      }
+    }
+
+    function renderCart() {
+      const content = document.getElementById('cartContent');
+      if (!content) return;
+
+      if (cart.length === 0) {
+        content.innerHTML = `
+          <div class="cart-empty" style="grid-column: 1/-1;">
+            <span class="icon">☕</span>
+            <h3>Your order cart is empty</h3>
+            <p>Explore our international menu and artisan coffees to create your table order.</p>
+            <a href="index.html#menu" class="btn-primary" style="margin-top: 10px;">Explore Our Menu</a>
+          </div>
+        `;
+        return;
+      }
+
+      const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      const total = subtotal + DELIVERY_CHARGE;
+
+      content.innerHTML = `
+        <div class="cart-items">
+          ${cart.map((item, index) => `
+            <div class="cart-item">
+              <div class="cart-item-image">
+                <img src="${item.image || 'cafe-photos/hero/abbendhas-open-air-hero.webp'}" alt="${item.name}" onerror="this.onerror=null; this.src='cafe-photos/hero/abbendhas-open-air-hero.webp';">
+              </div>
+              <div class="cart-item-info">
+                <h3>${item.name}</h3>
+                <p>${formatPrice(item.price)} each</p>
+              </div>
+              <div class="cart-item-qty">
+                <button class="qty-btn" onclick="updateQty(${index}, -1)" aria-label="Decrease quantity">−</button>
+                <span class="qty-num">${item.qty}</span>
+                <button class="qty-btn" onclick="updateQty(${index}, 1)" aria-label="Increase quantity">+</button>
+              </div>
+              <div style="display:flex; align-items:center; gap:16px;">
+                <span class="cart-item-price">${formatPrice(item.price * item.qty)}</span>
+                <button class="cart-item-remove" onclick="removeItem(${index})" title="Remove item" aria-label="Remove item">✕</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        <div class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal (${cart.reduce((s, i) => s + i.qty, 0)} items)</span>
+            <span>${formatPrice(subtotal)}</span>
+          </div>
+          <div class="summary-row">
+            <span>Packaging & Service</span>
+            <span>${formatPrice(DELIVERY_CHARGE)}</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total Amount</span>
+            <span>${formatPrice(total)}</span>
+          </div>
+          <button class="btn-primary" onclick="checkout()">Proceed to Checkout</button>
+          <button class="btn-outline" onclick="clearCart()">Clear Order</button>
+        </div>
+      `;
+    }
+
+    function updateQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      saveCart();
+    }
+
+    function removeItem(index) {
+      const name = cart[index].name;
+      cart.splice(index, 1);
+      saveCart();
+      showNotification(`🗑️ ${name} removed from your order`);
+    }
+
+    function clearCart() {
+      if (confirm('Clear all items from your order?')) {
+        cart = [];
+        saveCart();
+        showNotification('🗑️ Order cleared');
+      }
+    }
+
+    function checkout() {
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0) + DELIVERY_CHARGE;
+      showNotification(`✓ Order confirmed! Total: ${formatPrice(total)}. Thank you from ABBENDHA'S CAFÉ!`);
+      cart = [];
+      saveCart();
+    }
+
+    // Initialize
+    updateCartCount();
+    renderCart();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABBENDHA'S CAFÉ — Where Every Cup Creates a Beautiful Memory | Kamkole</title>
+  <meta name="description"
+    content="ABBENDHA'S CAFÉ in Kamkole, opposite Woxsen Food. Experience luxury open-air architecture, elegant beige-and-white interiors, premium international cuisine, and artisanal coffees.">
+  <meta name="keywords"
+    content="ABBENDHA'S CAFÉ, luxury cafe Kamkole, Woxsen Food, open-air cafe, international food, coffee, beige interior">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ABBENDHA'S CAFÉ — Luxury Open-Air Café in Kamkole">
+  <meta property="og:description"
+    content="Where Every Cup Creates a Beautiful Memory. Open-air architecture, elegant cream-and-white interiors, and international flavours.">
+  <meta property="og:image" content="cafe-photos/hero/abbendhas-open-air-hero.webp">
+  <meta property="og:type" content="website">
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ====== 3. UNIQUE HOMEPAGE OPENING STYLE (300-600ms) ====== -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="opening-cup">
+      <div class="steam-wrap">
+        <span class="steam-line"></span>
+        <span class="steam-line"></span>
+        <span class="steam-line"></span>
+      </div>
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M2 19h18v2H2v-2zm18-13h-2V4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a4 4 0 0 0 4 4h7a4 4 0 0 0 4-4v-2h1a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3zm-4 8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5h10v9zm3-3a1 1 0 0 1-1 1h-1V8h1a1 1 0 0 1 1 1v3z" />
+      </svg>
+    </div>
+    <div class="brand-reveal">ABBENDHA'S CAFÉ</div>
+    <div class="tagline-reveal">"Where Every Cup Creates a Beautiful Memory."</div>
+  </div>
+
+  <!-- ====== NOTIFICATION TOAST CONTAINER ====== -->
+  <div class="notification-container" id="notificationContainer"></div>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">ABBENDHA'S <span>CAFÉ</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#architecture">Atmosphere</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="cart.html" class="nav-cart" aria-label="Shopping Cart">
+          🛒 <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ====== 3 & 4. HERO SECTION ====== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="cafe-photos/hero/abbendhas-open-air-hero.webp" alt="ABBENDHA'S CAFÉ luxury open-air terrace" id="heroBg"
+        fetchpriority="high">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-welcome">
+        <span>EST. 2026</span> • <span>KAMKOLE</span> • <span>LUXURY CAFÉ</span>
+      </div>
+      <h1 class="hero-title">ABBENDHA'S CAFÉ</h1>
+      <div class="hero-decorative">
+        <span class="line"></span>
+        <span class="icon">☕</span>
+        <span class="line"></span>
+      </div>
+      <p class="hero-quote">"Where Every Cup Creates a Beautiful Memory."</p>
+      <p class="hero-tagline">Open-Air Architecture • Elegant Cream & White Interiors • International Cuisine</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn-primary">EXPLORE MENU</a>
+        <a href="#story" class="btn-outline">DISCOVER OUR STORY</a>
+        <a href="#contact" class="btn-white">VISIT OUR CAFÉ</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-mouse"></div>
+    </div>
+  </section>
+
+  <!-- ====== 6. BRAND STORY SECTION ====== -->
+  <section class="story-section" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image-wrap reveal-left">
+          <div class="story-image">
+            <img src="cafe-photos/interiors/white-marble-interior.webp"
+              alt="ABBENDHA'S CAFÉ elegant white marble tables and lounge seating" loading="lazy">
+          </div>
+          <div class="story-badge-floating">
+            <div class="year">2026</div>
+            <div class="label">Established In Kamkole</div>
+          </div>
+        </div>
+        <div class="story-content reveal-right">
+          <div class="story-header">
+            <span class="badge-tag">Our Heritage & Heart</span>
+            <h2 class="story-title">THE STORY BEHIND ABBENDHA'S CAFÉ</h2>
+            <div class="gold-line" style="margin: 12px 0 20px 0;"></div>
+          </div>
+          <div class="story-lead">
+            "Every beautiful place begins with an idea — a vision of bringing people together through food, warmth, and
+            unforgettable moments."
+          </div>
+          <div class="story-body">
+            <p>ABBENDHA'S CAFÉ was established in 2026 with a simple dream: to create a place where a cup of coffee
+              becomes more than a drink, a meal becomes a shared experience, and every visit creates a lasting memory.
+            </p>
+            <p>Inspired by the calm elegance of cream-and-white interiors, the beauty of open spaces, and the joy of
+              discovering international flavours, our café brings together thoughtful design, welcoming surroundings,
+              and a passion for great food.</p>
+            <p>From quiet mornings with coffee to lively afternoons with friends, ABBENDHA'S CAFÉ is designed to make
+              everyone feel welcome.</p>
+            <p>Our vision is to create a beautiful destination in Kamkole where students, friends, families, and food
+              lovers can pause, connect, celebrate, and create their own stories.</p>
+          </div>
+          <div class="story-pillars">
+            <div class="story-pillar-card">
+              <div class="pillar-icon">🏛️</div>
+              <h4>Open-Air Architecture</h4>
+              <p>Natural sunlight, breezy pergolas, and serene garden seating.</p>
+            </div>
+            <div class="story-pillar-card">
+              <div class="pillar-icon">🛋️</div>
+              <h4>Beige & White Interiors</h4>
+              <p>Ivory sofas, white marble tabletops, and champagne-gold accents.</p>
+            </div>
+            <div class="story-pillar-card">
+              <div class="pillar-icon">🌍</div>
+              <h4>International Flavours</h4>
+              <p>Authentic Italian, American, Mexican, and Japanese-inspired dishes.</p>
+            </div>
+            <div class="story-pillar-card">
+              <div class="pillar-icon">☕</div>
+              <h4>Exceptional Coffee</h4>
+              <p>Artisanal brews roasted to perfection and served with warmth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 4. OPEN-AIR LUXURY CAFÉ EXPERIENCE ====== -->
+  <section class="architecture" id="architecture">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="badge-tag reveal">Design & Ambiance</span>
+        <h2 class="section-title reveal">OPEN-AIR LUXURY <span>EXPERIENCE</span></h2>
+        <div class="gold-line reveal"></div>
+        <p class="section-subtitle reveal">Spacious terraces, natural light, and elegant comfort designed for peaceful
+          moments</p>
+      </div>
+
+      <div class="arch-grid">
+        <div class="arch-card reveal">
+          <div class="arch-card-img">
+            <img src="cafe-photos/gallery/building/two-floor-facade.webp" alt="Two-floor luxury cafe building facade" loading="lazy">
+            <span class="arch-card-badge">Two-Floor Flagship</span>
+          </div>
+          <div class="arch-card-body">
+            <h3>Two-Floor Architectural Design</h3>
+            <p>Modern standalone glass & limestone building in Kamkole with a bustling ground floor espresso bar and a breezy upper open-air terrace.</p>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-card-img">
+            <img src="cafe-photos/gallery/ground-floor/marble-espresso-hall.webp"
+              alt="Ground floor espresso hall with white marble and beige velvet" loading="lazy">
+            <span class="arch-card-badge">Ground Floor</span>
+          </div>
+          <div class="arch-card-body">
+            <h3>Marble Espresso Hall & Lounge</h3>
+            <p>Calacatta marble service counter, curved cream velvet banquettes, warm architectural arch alcoves, and floor-to-ceiling glass windows.</p>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-card-img">
+            <img src="cafe-photos/gallery/first-floor/terrace-evening-lounge.webp" alt="First floor open-air terrace at dusk" loading="lazy">
+            <span class="arch-card-badge">1st Floor Terrace</span>
+          </div>
+          <div class="arch-card-body">
+            <h3>Open-Air Breeze & Pergola Deck</h3>
+            <p>Shaded wooden pergola dining, minimalist glass railings overlooking Kamkole countryside, and ambient warm string lights at dusk.</p>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-card-img">
+            <img src="cafe-photos/gallery/students/woxsen-study-lounge.webp"
+              alt="University students co-working and studying at large oak table" loading="lazy">
+            <span class="arch-card-badge">Study & Co-Work</span>
+          </div>
+          <div class="arch-card-body">
+            <h3>Woxsen Student Creative Hub</h3>
+            <p>High-speed gigabit Wi-Fi, built-in laptop charging outlets, curated design book library, and collaborative natural wood tables.</p>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-card-img">
+            <img src="cafe-photos/gallery/first-floor/library-reading-nook.webp" alt="Quiet bouclé armchair reading sanctuary"
+              loading="lazy">
+            <span class="arch-card-badge">Quiet Sanctuary</span>
+          </div>
+          <div class="arch-card-body">
+            <h3>Upper Library & Reading Nook</h3>
+            <p>Cozy textured bouclé armchairs, arched backlit bookshelves, and quiet tree-canopy views for thoughtful reading and solitary moments.</p>
+          </div>
+        </div>
+
+        <div class="arch-card reveal">
+          <div class="arch-card-img">
+            <img src="cafe-photos/gallery/first-floor/sunset-pergola-deck.webp" alt="Golden hour sunset deck ambience" loading="lazy">
+            <span class="arch-card-badge">Golden Hour</span>
+          </div>
+          <div class="arch-card-body">
+            <h3>Sunset Magic & Evening Mood</h3>
+            <p>As dusk settles over Kamkole, soft candlelight and twilight skies turn the upper deck into a magical setting for dates and friends.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== THE ABBENDHA'S CAFÉ MENU ====== -->
+  <section class="menu menu-section" id="menu">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="badge-tag reveal">Handcrafted Dining & Artisanal Coffee</span>
+        <h2 class="section-title reveal">THE ABBENDHA'S <span>CAFÉ MENU</span></h2>
+        <div class="gold-line reveal"></div>
+        <p class="section-subtitle reveal">"Discover international flavours, handcrafted coffee, and little moments of happiness."</p>
+      </div>
+
+      <div class="menu-controls reveal">
+        <div class="menu-search">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="menuSearch" placeholder="Search menu (e.g. Cappuccino, Margherita Pizza, Tacos, Sushi)..."
+            aria-label="Search menu">
+        </div>
+
+        <div class="menu-filters" id="menuFilters">
+          <button class="filter-btn active" data-category="all">All Items</button>
+          <button class="filter-btn" data-category="coffee">Coffee</button>
+          <button class="filter-btn" data-category="italian">Italian</button>
+          <button class="filter-btn" data-category="american">American</button>
+          <button class="filter-btn" data-category="mexican">Mexican</button>
+          <button class="filter-btn" data-category="japanese">Japanese-Inspired</button>
+          <button class="filter-btn" data-category="desserts">Desserts</button>
+          <button class="filter-btn" data-category="mocktails">Mocktails</button>
+        </div>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Rendered dynamically by script.js with verified photographs & ₹ pricing -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 7. EXPLORE THE CAFÉ GALLERY (STEP INTO OUR LITTLE WORLD) ====== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="badge-tag reveal">Visual Journey</span>
+        <h2 class="section-title reveal">STEP INTO OUR <span>LITTLE WORLD</span></h2>
+        <div class="gold-line reveal"></div>
+        <p class="section-subtitle reveal">"Open spaces, beautiful details, and moments made to be remembered."</p>
+      </div>
+
+      <div class="gallery-filters reveal" id="galleryTabs">
+        <button class="gallery-tab active" data-category="all">✨ ALL SPACES</button>
+        <button class="gallery-tab" data-category="building">🏛️ TWO-FLOOR ARCHITECTURE</button>
+        <button class="gallery-tab" data-category="ground">☕ GROUND FLOOR HALL</button>
+        <button class="gallery-tab" data-category="terrace">🌿 1ST FLOOR OPEN-AIR</button>
+        <button class="gallery-tab" data-category="students">🎓 STUDENT COMMUNITY</button>
+        <button class="gallery-tab" data-category="craft">✨ ARTISAN CRAFT</button>
+      </div>
+
+      <div class="gallery-editorial-grid reveal" id="galleryGrid">
+        <!-- Rendered by script.js with dynamic editorial layout -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== LIGHTBOX MODAL ====== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="ABBENDHA'S CAFÉ gallery photograph" id="lightboxImg">
+      <div class="lightbox-caption-bar">
+        <div class="lightbox-caption-text" id="lightboxCaption"></div>
+        <div class="lightbox-category-tag" id="lightboxCategory"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SPECIAL OFFERS ====== -->
+  <section class="specials" id="specials">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="badge-tag reveal">Curated Pairings</span>
+        <h2 class="section-title reveal">ABBENDHA'S <span>SPECIAL COMBOS</span></h2>
+        <div class="gold-line reveal"></div>
+        <p class="section-subtitle reveal">Special curated pairings for students, friends, and coffee lovers</p>
+      </div>
+
+      <div class="specials-grid">
+        <div class="special-card reveal">
+          <span class="special-badge">Student Favorite</span>
+          <h3>Campus Hangout Combo</h3>
+          <p class="items">Gourmet Burger + Loaded Fries + Blue Lagoon Cooler</p>
+          <div class="gold-line"></div>
+          <div class="special-price">₹299</div>
+          <button class="btn-primary" onclick="addSpecialToCart('Campus Hangout Combo', 299)">Add Combo to Cart</button>
+        </div>
+
+        <div class="special-card reveal">
+          <span class="special-badge">Signature Pair</span>
+          <h3>Coffee & Dessert Duet</h3>
+          <p class="items">Artisan Cappuccino + New York Cheesecake</p>
+          <div class="gold-line"></div>
+          <div class="special-price">₹249</div>
+          <button class="btn-primary" onclick="addSpecialToCart('Coffee & Dessert Duet', 249)">Add Combo to Cart</button>
+        </div>
+
+        <div class="special-card reveal">
+          <span class="special-badge">Italian Feast</span>
+          <h3>Open-Air Pizza Feast</h3>
+          <p class="items">Margherita Pizza + Garlic Cheese Bread + 2 Iced Teas</p>
+          <div class="gold-line"></div>
+          <div class="special-price">₹449</div>
+          <button class="btn-primary" onclick="addSpecialToCart('Open-Air Pizza Feast', 449)">Add Combo to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== STUDENT & CAMPUS HANGOUT ====== -->
+  <section class="student" id="student">
+    <div class="container">
+      <div class="student-grid">
+        <div class="student-text reveal-left">
+          <span class="badge-tag">Community & Friends</span>
+          <h2>A Welcoming Destination for Students & Friends</h2>
+          <div class="gold-line" style="margin: 12px 0 20px 0;"></div>
+          <p>ABBENDHA'S CAFÉ was thoughtfully envisioned as a warm, welcoming space opposite Woxsen Food in Kamkole.
+            Whether you need a quiet morning spot with your laptop and coffee, a breezy afternoon study session, or a
+            lively table to celebrate with friends, our café is designed for you.</p>
+          <p>With abundant charging points, peaceful garden corners, spacious lounge tables, and attentive service, you
+            are always invited to stay, connect, and relax.</p>
+          <div class="student-tags">
+            <span class="student-tag">☕ Quiet Coffee & Laptops</span>
+            <span class="student-tag">👫 Friend Reunions</span>
+            <span class="student-tag">📚 Group Study Sessions</span>
+            <span class="student-tag">🎂 Birthday Celebrations</span>
+            <span class="student-tag">💑 Romantic Open-Air Dates</span>
+            <span class="student-tag">🌙 Evening Terrace Vibes</span>
+            <span class="student-tag">🍽️ Post-Class Lunch</span>
+            <span class="student-tag">🌿 Peaceful Garden Breaks</span>
+          </div>
+        </div>
+        <div class="student-image reveal-right">
+          <img src="cafe-photos/gallery/students/creative-campus-collaboration.webp"
+            alt="Students collaborating and enjoying coffee at ABBENDHA'S CAFÉ" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== HYGIENE & QUALITY ====== -->
+  <section class="hygiene" id="hygiene">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="badge-tag reveal">Purity & Care</span>
+        <h2 class="section-title reveal">FRESHNESS & HYGIENE IN <span>EVERY DETAIL</span></h2>
+        <div class="gold-line reveal"></div>
+        <p class="section-subtitle reveal">Uncompromising standards in cleanliness, ingredient freshness, and food safety</p>
+      </div>
+
+      <div class="hygiene-grid">
+        <div class="hygiene-card reveal">
+          <span class="icon">🍳</span>
+          <h3>Spotless Preparation Areas</h3>
+          <p>Strict sanitization routines maintained throughout our open kitchen.</p>
+        </div>
+        <div class="hygiene-card reveal">
+          <span class="icon">🪑</span>
+          <h3>Sanitized Marble Tables</h3>
+          <p>Every table is thoroughly sanitized immediately between guest seatings.</p>
+        </div>
+        <div class="hygiene-card reveal">
+          <span class="icon">🍽️</span>
+          <h3>Sparkling Cutlery & Glasses</h3>
+          <p>High-temperature dishwashing ensuring pristine glassware and silverware.</p>
+        </div>
+        <div class="hygiene-card reveal">
+          <span class="icon">🥗</span>
+          <h3>Freshly Sourced Ingredients</h3>
+          <p>Daily deliveries of farm-fresh herbs, vegetables, and dairy.</p>
+        </div>
+        <div class="hygiene-card reveal">
+          <span class="icon">💧</span>
+          <h3>Multi-Stage Purified Water</h3>
+          <p>Clean mineral-balanced RO water for all coffees, drinks, and cooking.</p>
+        </div>
+        <div class="hygiene-card reveal">
+          <span class="icon">🧴</span>
+          <h3>Accessible Handwash Stations</h3>
+          <p>Clean, beautifully designed wash facilities and sanitizing stations.</p>
+        </div>
+      </div>
+
+      <div class="hygiene-image reveal">
+        <img src="cafe-photos/interiors/natural-light-interior.webp"
+          alt="Clean, bright, hygienic dining space at ABBENDHA'S CAFÉ" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== REVIEWS SECTION ====== -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="badge-tag reveal">Guest Memories</span>
+        <h2 class="section-title reveal">MOMENTS <span>SHARED WITH US</span></h2>
+        <div class="gold-line reveal"></div>
+        <p class="section-subtitle reveal">What visitors love about their time at ABBENDHA'S CAFÉ</p>
+      </div>
+
+      <div class="reviews-carousel reveal" id="reviewsCarousel">
+        <div class="reviews-track" id="reviewsTrack">
+          <div class="review-card">
+            <div class="review-stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="review-text">"The beige and white aesthetic is truly breathtaking. You feel like you've stepped
+              into a luxury resort café. The cappuccino was silky smooth and the open terrace has the most calming
+              breeze."</p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div>
+                <div class="review-name">Aarav Sharma</div>
+                <div class="review-title">Woxsen Campus Student</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="review-text">"Hands down the best place in Kamkole to meet up. The Margherita pizza had the
+              crispiest crust, the mocktails were cold and refreshing, and the staff treats you like family."</p>
+            <div class="review-author">
+              <div class="review-avatar">P</div>
+              <div>
+                <div class="review-name">Priya Reddy</div>
+                <div class="review-title">Food & Coffee Lover</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                class="star">★</span><span class="star">★</span>
+            </div>
+            <p class="review-text">"I bring my laptop here for study sessions every weekend. The natural sunlight, white
+              marble tables, and caramel macchiato make it my favorite creative sanctuary."</p>
+            <div class="review-author">
+              <div class="review-avatar">R</div>
+              <div>
+                <div class="review-name">Rahul Patel</div>
+                <div class="review-title">Regular Guest</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-dots" id="reviewsDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 10. CAFÉ DETAILS AND CONTACT ====== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="badge-tag reveal">Visit & Connect</span>
+        <h2 class="section-title reveal">VISIT <span>ABBENDHA'S CAFÉ</span></h2>
+        <div class="gold-line reveal"></div>
+        <p class="section-subtitle reveal">Kamkole, opposite Woxsen Food • We look forward to welcoming you</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <h3>Café Details</h3>
+          <div class="contact-item">
+            <div class="icon">📍</div>
+            <div>
+              <h4>Address</h4>
+              <p>Kamkole, opposite Woxsen Food</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">📞</div>
+            <div>
+              <h4>Mobile</h4>
+              <p><a href="tel:7993062038" style="color:var(--clr-champagne); font-weight:600;">7993062038</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">🕐</div>
+            <div>
+              <h4>Opening Hours</h4>
+              <p>Monday – Sunday: 9:00 AM – 11:00 PM</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p>hello@abbendhascafe.com</p>
+            </div>
+          </div>
+
+          <div class="contact-buttons">
+            <a href="tel:7993062038" class="contact-btn call">📞 Call 7993062038</a>
+            <a href="https://maps.google.com/?q=Kamkole+opposite+Woxsen+Food" target="_blank" rel="noopener noreferrer"
+              class="contact-btn directions">📍 Get Directions</a>
+          </div>
+
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=Kamkole+opposite+Woxsen+Food&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen loading="lazy" title="ABBENDHA'S CAFÉ Location in Kamkole"></iframe>
+          </div>
+        </div>
+
+        <div class="contact-form reveal-right">
+          <h3>Send Us a Note</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="contactName">Full Name</label>
+              <input type="text" id="contactName" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" placeholder="Your email address" required>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Mobile Number</label>
+              <input type="tel" id="contactPhone" placeholder="Your mobile number" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message / Table Inquiry</label>
+              <textarea id="contactMessage" placeholder="Tell us how we can help..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;">SEND MESSAGE</button>
+            <div class="form-success" id="formSuccess">✓ Thank you! Your message has been received.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>ABBENDHA'S CAFÉ</h3>
+          <p>"Where Every Cup Creates a Beautiful Memory."</p>
+          <p>Established in 2026. A luxury open-air destination in Kamkole celebrating warm beige elegance, natural
+            light, and international cuisine.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#home">Home</a>
+          <a href="#story">Our Story</a>
+          <a href="#architecture">Atmosphere</a>
+          <a href="#menu">Our Menu</a>
+          <a href="#gallery">Photo Gallery</a>
+          <a href="#contact">Contact & Map</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Menu Cuisines</h4>
+          <a href="#menu" onclick="filterMenu('coffee')">Artisanal Coffee</a>
+          <a href="#menu" onclick="filterMenu('italian')">Italian Cuisine</a>
+          <a href="#menu" onclick="filterMenu('american')">American Classics</a>
+          <a href="#menu" onclick="filterMenu('mexican')">Mexican Specialities</a>
+          <a href="#menu" onclick="filterMenu('desserts')">Gourmet Desserts</a>
+          <a href="#menu" onclick="filterMenu('beverages')">Refreshing Beverages</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <p>📍 Kamkole, opposite Woxsen Food</p>
+          <p>📞 <a href="tel:7993062038" style="color:var(--clr-champagne);">7993062038</a></p>
+          <p>🕐 Mon – Sun: 9:00 AM – 11:00 PM</p>
+          <p>✨ Open-Air Terrace & Garden</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 ABBENDHA'S CAFÉ. All Rights Reserved. Established in 2026.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== BACK TO TOP ====== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- Application Script -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
